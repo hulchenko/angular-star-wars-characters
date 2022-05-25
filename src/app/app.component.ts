@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'star-wars-characters';
+  rootItems = ['Apples', 'Bananas', 'Cherries'];
+
+  addNewItems(newItem) {
+    this.rootItems.push(newItem)
+  }
 }
