@@ -27,4 +27,16 @@ export class StarWarsService {
     this.characters[pos].side = passedCharacterInfo.side;
     this.logService.logText(`Changed side of ${passedCharacterInfo.name}, the chosen side now is: ${passedCharacterInfo.side}`)
   }
+
+  addCharacter(name, side) {
+    const pos = this.characters.findIndex((i) => {
+      return i.name === name;
+    })
+    console.log(`POSITION`, pos)
+    if (pos !== -1) { // returned if no index was find, hence needs to be added
+      return;
+    }
+    const newChar = { name: name, side: side }
+    this.characters.push(newChar)
+  }
 }
