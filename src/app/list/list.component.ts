@@ -17,12 +17,11 @@ export class ListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((param) => {
-      console.log(`PARAMETER: `, param)
-      this.characters = this.starWarsService.getCharacters(param.chosenSide)
+      this.characters = this.starWarsService.getCharacters(param.chosenSide);
       this.loadedSide = param.chosenSide;
     });
     this.subscription = this.starWarsService.charactersChanged.subscribe(() => {
-      this.characters = this.starWarsService.getCharacters(this.loadedSide)
+      this.characters = this.starWarsService.getCharacters(this.loadedSide);
     })
   }
 
